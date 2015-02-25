@@ -32,7 +32,6 @@ CH_SubTargets_FullCube =
 					[["Centre target removed"],true,true] call CH_LowMessage;
 				};
 				PUSH(_target_array,_target);
-				_target_array = [_target,_target_array,_centre] call CH_SubTargets_RemoveCentre;
 			};
 		};
 	};
