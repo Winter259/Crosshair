@@ -13,6 +13,10 @@ CH_CreateHarassmentUnit =
 	sleep 0.5;
 	[["Harasser created: %1 on side: %2 in group: %3",_harasser,_harasser_side,_harasser_group],true,true] call CH_ImpMessage;
 	_harasser moveInGunner _static;
+	_harasser setVariable ["ace_sys_overheating_cbh", 0, true];
+	_harasser setVariable ["ace_sys_overheating_temp", 0, true];
+	_static setVariable ["ace_sys_overheating_cbh", 0, true];
+	_static setVariable ["ace_sys_overheating_temp", 0, true];
 	_engagement_range = [_engagement_range] call CH_Harass_ValidateEngagementRange;
 	[_harasser,_engagement_range] call CH_Harass_InitHarasser;
 	[_harasser,_engagement_range,_enemy_sides_array] spawn CH_Harass_Routines;
